@@ -6,7 +6,7 @@ import {
   ViewStyle,
   TextStyle,
 } from "react-native";
-import RNSlider from "@miblanchard/react-native-slider";
+import {Slider as RNSlider} from "@miblanchard/react-native-slider";
 import Icon from "react-native-vector-icons/Feather";
 import styles from "./MediaControls.style";
 import { humanizeVideoDuration } from "./utils";
