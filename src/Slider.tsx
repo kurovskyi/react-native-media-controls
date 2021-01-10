@@ -66,7 +66,7 @@ const Slider = (props: Props) => {
     onPause();
   };
 
-  const seekVideo = (value: number) => {
+  const seekVideo = ([value]: number[]) => {
     props.onSeek(value);
     onPause();
   };
