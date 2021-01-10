@@ -90,20 +90,21 @@ const Slider = (props: Props) => {
         {humanizeVideoDuration(progress)}
       </Text>
       <View style={styles.progressColumnContainer}>
-        <RNSlider
-          style={[styles.progressSlider]}
-          onValueChange={dragging}
-          onSlidingComplete={seekVideo}
-          maximumValue={Math.floor(duration)}
-          value={Math.floor(progress)}
-          trackStyle={[styles.track, customTrackStyle]}
-          thumbStyle={[
-            styles.thumb,
-            customThumbStyle,
-            { borderColor: mainColor },
-          ]}
-          minimumTrackTintColor={mainColor}
-        />
+        <View style={[styles.progressSlider]}>
+          <RNSlider
+            onValueChange={dragging}
+            onSlidingComplete={seekVideo}
+            maximumValue={Math.floor(duration)}
+            value={Math.floor(progress)}
+            trackStyle={[styles.track, customTrackStyle]}
+            thumbStyle={[
+              styles.thumb,
+              customThumbStyle,
+              { borderColor: mainColor },
+            ]}
+            minimumTrackTintColor={mainColor}
+          />
+        </View>
       </View>
       <Text
         style={[
