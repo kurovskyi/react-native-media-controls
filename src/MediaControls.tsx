@@ -94,7 +94,7 @@ const MediaControls = (props: Props) => {
 
   useEffect(() => {
     fadeOutControls(fadeOutDelay);
-  }, [fadeOutDelay]);
+  }, [fadeOutControls, fadeOutDelay]);
 
   const fadeInControls = (loop = true) => {
     setIsVisible(true);
