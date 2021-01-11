@@ -6,7 +6,7 @@ import {
   ViewStyle,
   TextStyle,
 } from "react-native";
-import {Slider as RNSlider} from "@miblanchard/react-native-slider";
+import RNSlider from "react-native-slider";
 import Icon from "react-native-vector-icons/Feather";
 import styles from "./MediaControls.style";
 import { humanizeVideoDuration } from "./utils";
@@ -55,7 +55,7 @@ const Slider = (props: Props) => {
   const customThumbStyle = customSliderStyle?.thumbStyle || {};
   const customTextStyle = customSliderStyle?.textStyle || {};
 
-  const dragging = ([value]: number[]) => {
+  const dragging = (value: number) => {
     const { onSeeking, playerState } = props;
     onSeeking(value);
 
@@ -66,7 +66,7 @@ const Slider = (props: Props) => {
     onPause();
   };
 
-  const seekVideo = ([value]: number[]) => {
+  const seekVideo = (value: number) => {
     props.onSeek(value);
     onPause();
   };
@@ -76,7 +76,11 @@ const Slider = (props: Props) => {
       style={[
         styles.controlsRow,
         styles.progressContainer,
-        { bottom: 0, left: secondaryControlsPadding },
+        {
+          bottom: 0,
+          left: secondaryControlsPadding,
+          right: secondaryControlsPadding,
+        },
         containerStyle,
       ]}
     >
@@ -90,21 +94,20 @@ const Slider = (props: Props) => {
         {humanizeVideoDuration(progress)}
       </Text>
       <View style={styles.progressColumnContainer}>
-        <View style={[styles.progressSlider]}>
-          <RNSlider
-            onValueChange={dragging}
-            onSlidingComplete={seekVideo}
-            maximumValue={Math.floor(duration)}
-            value={Math.floor(progress)}
-            trackStyle={[styles.track, customTrackStyle]}
-            thumbStyle={[
-              styles.thumb,
-              customThumbStyle,
-              { borderColor: mainColor },
-            ]}
-            minimumTrackTintColor={mainColor}
-          />
-        </View>
+        <RNSlider
+          style={[styles.progressSlider]}
+          onValueChange={dragging}
+          onSlidingComplete={seekVideo}
+          maximumValue={Math.floor(duration)}
+          value={Math.floor(progress)}
+          trackStyle={[styles.track, customTrackStyle]}
+          thumbStyle={[
+            styles.thumb,
+            customThumbStyle,
+            { borderColor: mainColor },
+          ]}
+          minimumTrackTintColor={mainColor}
+        />
       </View>
       <Text
         style={[
