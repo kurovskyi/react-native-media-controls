@@ -168,6 +168,7 @@ const MediaControls = (props: Props) => {
                 styles.toolbarRow,
                 {
                   left: secondaryControlsPadding,
+                  right: secondaryControlsPadding,
                   top: secondaryControlsPadding,
                 },
                 customToolbarStyle,
