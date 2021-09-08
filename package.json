@@ -37,7 +37,7 @@
     "react": ">=16",
     "react-native": ">=0.60",
     "react-native-vector-icons": ">=7.1.0",
-    "react-native-slider": "git+https://github.com/CarbonyDK/react-native-slider.git"
+    "react-native-slider": "git+https://github.com/kurovskyi/react-native-slider.git"
   },
   "husky": {
     "hooks": {
@@ -50,7 +50,7 @@
     "@types/react-native-vector-icons": "^6.4.6",
     "husky": "^4.2.5",
     "react": "^16.13.1",
-    "react-native-slider": "git+https://github.com/CarbonyDK/react-native-slider.git",
+    "react-native-slider": "git+https://github.com/kurovskyi/react-native-slider.git",
     "rollup-plugin-copy": "^3.3.0",
     "tsdx": "^0.13.2",
     "tslib": "^1.11.1",
